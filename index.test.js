@@ -7,6 +7,7 @@ import ColorSpecification from "./ocp/ColorSpecification.js";
 import SizeSpecification from "./ocp/SizeSpecification.js";
 import AndSpecification from "./ocp/AndSpecification.js";
 import OrSpecification from "./ocp/OrSpecification.js";
+import NotSpecification from "./ocp/NotSpecification.js";
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -84,6 +85,8 @@ test("BetterFilter can filter by color and size", () => {
   expect(green.length).toBe(1);
 });
 
+/// AND specification
+
 test("AndSpecification is defined", () => {
   expect(AndSpecification).toBeDefined();
 });
@@ -121,6 +124,8 @@ test("AndSpecification can filter by color and size", () => {
   expect(green.length).toBe(1);
 });
 
+// Color specification
+
 test("ColorSpecification is defined", () => {
   expect(ColorSpecification).toBeDefined();
 });
@@ -150,6 +155,8 @@ test("ColorSpecification can filter by color", () => {
   let green = bf.filter(products, new ColorSpecification(Color.green));
   expect(green.length).toBe(2);
 });
+
+// Size specification
 
 test("SizeSpecification is defined", () => {
   expect(SizeSpecification).toBeDefined();
@@ -181,42 +188,148 @@ test("SizeSpecification can filter by size", () => {
   expect(large.length).toBe(2);
 });
 
+// OR specification
+
 test("OrSpecification is defined", () => {
   expect(OrSpecification).toBeDefined();
 });
 
 test("OrSpecification is a class", () => {
-    expect(typeof OrSpecification).toBe("function");
-    });
+  expect(typeof OrSpecification).toBe("function");
+});
 test("OrSpecification can filter by color or size", () => {
+  let Color = Object.freeze({
+    red: Symbol("red"),
+    green: Symbol("green"),
+    blue: Symbol("blue"),
+  });
+
+  let Size = Object.freeze({
+    small: Symbol("small"),
+    medium: Symbol("medium"),
+    large: Symbol("large"),
+  });
+
+  let bf = new BetterFilter();
+  let products = [
+    new Product("Apple", Color.green, Size.small),
+    new Product("Tree", Color.red, Size.large),
+    new Product("House", Color.green, Size.large),
+  ];
+  let green = bf.filter(
+    products,
+    new OrSpecification(
+      new ColorSpecification(Color.green),
+      new SizeSpecification(Size.large)
+    )
+  );
+  expect(green.length).toBe(3);
+});
+
+// NOT specification
+
+test("NotSpecification is defined", () => {
+    expect(NotSpecification).toBeDefined();
+})
+
+test("NotSpecification is a class", () => {
+    expect(typeof NotSpecification).toBe("function");
+})
+
+test("NotSpecification can filter by color", () => {
     let Color = Object.freeze({
         red: Symbol("red"),
         green: Symbol("green"),
         blue: Symbol("blue"),
     });
-    
+
     let Size = Object.freeze({
         small: Symbol("small"),
         medium: Symbol("medium"),
         large: Symbol("large"),
     });
-    
+
     let bf = new BetterFilter();
     let products = [
         new Product("Apple", Color.green, Size.small),
         new Product("Tree", Color.red, Size.large),
         new Product("House", Color.green, Size.large),
     ];
-    let green = bf.filter(
-        products,
-        new OrSpecification(
-        new ColorSpecification(Color.green),
-        new SizeSpecification(Size.large)
-        )
-    );
-    expect(green.length).toBe(3);
+    let green = bf.filter(products, new NotSpecification(new ColorSpecification(Color.green)));
+    expect(green.length).toBe(1);
+})
+
+test("NotSpecification can filter by size", () => {
+    let Color = Object.freeze({
+        red: Symbol("red"),
+        green: Symbol("green"),
+        blue: Symbol("blue"),
     });
 
-    // test("NotSpecification is defined", () => {
-    //     expect(NotSpecification).toBeDefined();
-    // })
+    let Size = Object.freeze({
+        small: Symbol("small"),
+        medium: Symbol("medium"),
+        large: Symbol("large"),
+    });
+
+    let bf = new BetterFilter();
+    let products = [
+        new Product("Apple", Color.green, Size.small),
+        new Product("Tree", Color.red, Size.large),
+        new Product("House", Color.green, Size.large),
+    ];
+    let large = bf.filter(products, new NotSpecification(new SizeSpecification(Size.large)));
+    expect(large.length).toBe(1);
+})
+
+// NOT with AND specification
+
+test("NotSpecification can filter by color and size", () => {
+    let Color = Object.freeze({
+        red: Symbol("red"),
+        green: Symbol("green"),
+        blue: Symbol("blue"),
+    });
+
+    let Size = Object.freeze({
+        small: Symbol("small"),
+        medium: Symbol("medium"),
+        large: Symbol("large"),
+    });
+
+    let bf = new BetterFilter();
+    let products = [
+        new Product("Apple", Color.red, Size.small),
+        new Product("Tree", Color.red, Size.large),
+        new Product("House", Color.green, Size.large),
+    ];
+    let green = bf.filter(products, new NotSpecification(new AndSpecification(new ColorSpecification(Color.green), new SizeSpecification(Size.large))));
+    expect(green.length).toBe(2);
+})
+
+// NOT with OR specification
+
+test("NotSpecification can filter by color or size", () => {
+    let Color = Object.freeze({
+        red: Symbol("red"),
+        green: Symbol("green"),
+        blue: Symbol("blue"),
+    });
+
+    let Size = Object.freeze({
+        small: Symbol("small"),
+        medium: Symbol("medium"),
+        large: Symbol("large"),
+    });
+
+    let bf = new BetterFilter();
+    let products = [
+        new Product("Apple", Color.red, Size.small),
+        new Product("Tree", Color.red, Size.large),
+        new Product("House", Color.green, Size.large),
+    ];
+    let green = bf.filter(products, new NotSpecification(new OrSpecification(new ColorSpecification(Color.green), new SizeSpecification(Size.large))));
+    expect(green.length).toBe(1);
+})
+
+

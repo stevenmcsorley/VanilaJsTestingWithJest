@@ -8,6 +8,7 @@ import ColorSpecification from './ocp/ColorSpecification.js';
 import SizeSpecification from './ocp/SizeSpecification.js';
 import AndSpecification from './ocp/AndSpecification.js';
 import OrSpecification from './ocp/OrSpecification.js';
+import NotSpecification from './ocp/NotSpecification.js';
 
 
     
@@ -31,24 +32,29 @@ let Color = Object.freeze({
 
 
 let apple = new Product("Apple", Color.green, Size.small);
-let tree = new Product("Tree", Color.red, Size.large);
+let tree = new Product("Tree", Color.red, Size.small);
 let house = new Product("House", Color.green, Size.large);
 let products = [apple, tree, house];
 
-let pf = new Product()
+// let pf = new Product()
 
-let redProducts = pf.filterByColor(products, Color.green);
+// let redProducts = pf.filterByColor(products, Color.green);
 
 // console.log(redProducts);
 
 /// OCP - Using specifications to filter products
 let bf = new BetterFilter();
 let green = bf.filter(products, new ColorSpecification(Color.green));
-// console.log(green);
+console.log("jsut green", green);
 
 let greenAndLarge = bf.filter(products, new AndSpecification(new ColorSpecification(Color.green), new SizeSpecification(Size.large)));
-console.log(greenAndLarge);
+console.log("green && large", greenAndLarge);
 
 let greenOrLarge = bf.filter(products, new OrSpecification(new ColorSpecification(Color.green), new SizeSpecification(Size.large)));
-console.log(greenOrLarge);
+console.log("green or large",greenOrLarge);
 
+let notGreen = bf.filter(products, new NotSpecification(new ColorSpecification(Color.green)));
+console.log("not green",notGreen);
+
+let notGreenOrLarge = bf.filter(products, new OrSpecification(new NotSpecification(new ColorSpecification(Color.green), new SizeSpecification(Size.large))));
+console.log("not green or large", notGreenOrLarge);
