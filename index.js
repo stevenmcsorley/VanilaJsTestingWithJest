@@ -1,11 +1,9 @@
 import subtract from './subtract.js';
-class Index {
+import Journal from './journal.js';
+
     
-static binarySubtraction = subtract(999, 777).toString(2);
+export const binarySubtraction = subtract(999, 777).toString(2);
 
-}
-
-
-
-
-export default Index;
+let j = new Journal();
+j.addEntry('I am a test entry');
+j.addEntry('I am another test entry');
