@@ -20,6 +20,10 @@ import Relationships from './dip/Relationships.js';
 import Research from './dip/Research.js';
 
 
+
+// Factory Method
+import PointFactory from './factory/PointFactory.js';
+
     
 export const binarySubtraction = subtract(999, 777).toString(2);
 
@@ -91,4 +95,15 @@ console.log( "is a Square ?", rc.isSquare().toString());
   rels.addParentAndChild(parent, child2);
 
   new Research(rels)
+
+
+  // Factory Method
+
+    let cp = PointFactory.createCaresianPoint(10, 20);
+    console.log(cp);
+    let pp = PointFactory.createPolarPoint(10, 20);
+    console.log(pp);
+
+
+
   
