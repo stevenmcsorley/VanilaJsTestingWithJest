@@ -24,6 +24,13 @@ import Research from './dip/Research.js';
 // Factory Method
 import PointFactory from './factory/PointFactory.js';
 
+
+// Absdtrct Factory
+
+import HotDrinkMachine from './abstract-factory/HotDrinkMachine.js';
+import CoffeeFactory from "./abstract-factory/CoffeeFactory.js";
+import TeaFactory from "./abstract-factory/TeaFactory.js";
+
     
 export const binarySubtraction = subtract(999, 777).toString(2);
 
@@ -105,5 +112,13 @@ console.log( "is a Square ?", rc.isSquare().toString());
     console.log(pp);
 
 
+// Abstract Factory
 
+let machine = new HotDrinkMachine();
+machine.register('tea', new TeaFactory());
+machine.register('coffee', new CoffeeFactory());
+let drink = machine.makeDrink('tea', 100);
+drink.consume();
+drink = machine.makeDrink('coffee', 100);
+drink.consume();
   
