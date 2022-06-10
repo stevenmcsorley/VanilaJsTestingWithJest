@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "serve": "nodemon *.js",
-    "test": "jest --watchAll --no-cache"
+    "test": "jest",
+    "test:watch": "jest --watchAll --no-cache",
+    "test:coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",

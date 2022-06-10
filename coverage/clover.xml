@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1654831017253" clover="3.2.0">
+  <project timestamp="1654831017253" name="All files">
+    <metrics statements="77" coveredstatements="77" conditionals="4" coveredconditionals="4" methods="39" coveredmethods="38" elements="120" coveredelements="119" complexity="0" loc="77" ncloc="77" packages="4" files="15" classes="15"/>
+    <package name="tests">
+      <metrics statements="50" coveredstatements="50" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="13"/>
+      <file name="Journal.js" path="C:\Users\steven.mcsorley\projects\tests\Journal.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+      <file name="Product.js" path="C:\Users\steven.mcsorley\projects\tests\Product.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+        <line num="3" count="52" type="stmt"/>
+        <line num="4" count="52" type="stmt"/>
+        <line num="5" count="52" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="19" count="3" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="index.js" path="C:\Users\steven.mcsorley\projects\tests\index.js">
+        <metrics statements="35" coveredstatements="35" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+      </file>
+      <file name="subtract.js" path="C:\Users\steven.mcsorley\projects\tests\subtract.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="tests.dip">
+      <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="8"/>
+      <file name="Person.js" path="C:\Users\steven.mcsorley\projects\tests\dip\Person.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+      <file name="RelationshipBrowser.js" path="C:\Users\steven.mcsorley\projects\tests\dip\RelationshipBrowser.js">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="Relationships.js" path="C:\Users\steven.mcsorley\projects\tests\dip\Relationships.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+      <file name="Research.js" path="C:\Users\steven.mcsorley\projects\tests\dip\Research.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="tests.liskov">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="Rectangle.js" path="C:\Users\steven.mcsorley\projects\tests\liskov\Rectangle.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="tests.ocp">
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="14"/>
+      <file name="AndSpecification.js" path="C:\Users\steven.mcsorley\projects\tests\ocp\AndSpecification.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="6" count="19" type="stmt"/>
+      </file>
+      <file name="BetterFilter.js" path="C:\Users\steven.mcsorley\projects\tests\ocp\BetterFilter.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="45" type="stmt"/>
+      </file>
+      <file name="ColorSpecification.js" path="C:\Users\steven.mcsorley\projects\tests\ocp\ColorSpecification.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="13" type="stmt"/>
+        <line num="7" count="39" type="stmt"/>
+      </file>
+      <file name="NotSpecification.js" path="C:\Users\steven.mcsorley\projects\tests\ocp\NotSpecification.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+      </file>
+      <file name="OrSpecification.js" path="C:\Users\steven.mcsorley\projects\tests\ocp\OrSpecification.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="6" count="16" type="stmt"/>
+      </file>
+      <file name="SizeSpecification.js" path="C:\Users\steven.mcsorley\projects\tests\ocp\SizeSpecification.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="6" count="17" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
