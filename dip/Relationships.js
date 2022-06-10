@@ -1,10 +1,10 @@
 import RelationshipBrowser from "./RelationshipBrowser.js";
 
 let relationship = Object.freeze({
-    parent: 0,
-    child: 1,
-    sibling: 2,
-  });
+  parent: 0,
+  child: 1,
+  sibling: 2,
+});
 
 // Lower level module
 class Relationships extends RelationshipBrowser {
@@ -21,8 +21,9 @@ class Relationships extends RelationshipBrowser {
   }
 
   findAllChildrenOf(name) {
-    return this.relationships.filter((r) => r.from.name === name)
-        .map((r) => r.to);
+    return this.relationships
+      .filter((r) => r.from.name === name)
+      .map((r) => r.to);
   }
 }
 
