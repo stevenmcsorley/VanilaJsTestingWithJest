@@ -1,3 +1,4 @@
 # VanilaJsTestingWithJest
 
-![image](https://user-images.githubusercontent.com/1843299/172983654-7371d211-e07c-4cce-bfb0-d86b34ead999.png)
+![image](https://user-images.githubusercontent.com/1843299/173051436-6ec67952-629d-4f3a-ac50-0c12ec81fc4e.png)
+
