@@ -14,6 +14,11 @@ import NotSpecification from './ocp/NotSpecification.js';
 // Liskov Substition Principle
 import Rectangle from './liskov/Rectangle.js';
 
+// Dependency Inversion Principle
+import Person from './dip/Person.js';
+import Relationships from './dip/Relationships.js';
+import Research from './dip/Research.js';
+
 
     
 export const binarySubtraction = subtract(999, 777).toString(2);
@@ -73,3 +78,17 @@ rc.width = 10
 rc.height = 10
 console.log("sq Area", rc.area().toString());
 console.log( "is a Square ?", rc.isSquare().toString());
+
+
+// Dependency Inversion Principle
+
+  let parent = new Person("John");
+  let child = new Person("Mary");
+  let child2 = new Person("Bob");
+  
+  let rels = new Relationships();
+  rels.addParentAndChild(parent, child);
+  rels.addParentAndChild(parent, child2);
+
+  new Research(rels)
+  
