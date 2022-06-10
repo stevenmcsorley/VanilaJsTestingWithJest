@@ -11,6 +11,10 @@ import OrSpecification from './ocp/OrSpecification.js';
 import NotSpecification from './ocp/NotSpecification.js';
 
 
+// Liskov Substition Principle
+import Rectangle from './liskov/Rectangle.js';
+
+
     
 export const binarySubtraction = subtract(999, 777).toString(2);
 
@@ -58,3 +62,14 @@ console.log("not green",notGreen);
 
 let notGreenOrLarge = bf.filter(products, new OrSpecification(new NotSpecification(new ColorSpecification(Color.green), new SizeSpecification(Size.large))));
 console.log("not green or large", notGreenOrLarge);
+
+
+// Liskov Substition Principle
+
+let rc = new Rectangle(10, 20);
+console.log("Area", rc.area().toString());
+console.log( "is a Square ?", rc.isSquare().toString());
+rc.width = 10
+rc.height = 10
+console.log("sq Area", rc.area().toString());
+console.log( "is a Square ?", rc.isSquare().toString());
